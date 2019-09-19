@@ -1,0 +1,12 @@
+type Place {
+  _id: ID!
+  title: String!
+  address: String!
+  lat: Float!
+  lng: Float!
+}
+
+type Query {
+  place(id: Int): Place
+  places: [Place]!
+}

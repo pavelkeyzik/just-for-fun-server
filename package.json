@@ -1,0 +1,20 @@
+{
+  "name": "learn-graphql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "2.9.3",
+    "graphql": "14.5.6"
+  },
+  "devDependencies": {
+    "nodemon": "1.19.2"
+  }
+}
