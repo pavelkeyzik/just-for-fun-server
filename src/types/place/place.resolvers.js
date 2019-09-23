@@ -1,25 +1,19 @@
-const places = () => {
-  return [
-    {
-      id: 1,
-      title: 'Лавка',
-      address: 'Октябрьская, 23',
-      lat: 53.890247,
-      lng: 27.574061,
-    },
-    {
-      id: 2,
-      title: 'Европа',
-      address: 'Сурганова, 57б',
-      lat: 53.929754,
-      lng: 27.581715,
-    },
-  ];
-};
+const PlaceModel = require('../../models/Place');
 
-function place(_, args) {
-  const foundedPlace = places().filter(place => place.id === args.id);
-  return foundedPlace && foundedPlace[0];
+async function places() {
+  try {
+    return await PlaceModel.find();
+  } catch (error) {
+    return error;
+  }
+}
+
+async function place(_, args) {
+  try {
+    return await PlaceModel.findById(args.id);
+  } catch (error) {
+    return error;
+  }
 }
 
 const resolvers = {

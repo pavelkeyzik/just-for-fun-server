@@ -7,6 +7,6 @@ type Place {
 }
 
 type Query {
-  place(id: Int): Place
+  place(id: String!): Place
   places: [Place]!
 }
