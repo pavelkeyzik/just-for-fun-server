@@ -6,7 +6,18 @@ type Place {
   lng: Float!
 }
 
+input PlaceInput {
+  title: String!
+  address: String!
+  lat: Float!
+  lng: Float!
+}
+
 type Query {
   place(id: String!): Place
   places: [Place]!
+}
+
+type Mutation {
+  newPlace(input: PlaceInput!): Place!
 }

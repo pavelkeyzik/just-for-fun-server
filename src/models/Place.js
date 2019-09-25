@@ -6,10 +6,6 @@ const schema = new Repository.Schema(
     address: String,
     lat: Number,
     lng: Number,
-    ttt: {
-      type: String,
-      required: true,
-    },
   },
   {
     versionKey: false,

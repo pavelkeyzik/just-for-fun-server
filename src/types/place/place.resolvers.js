@@ -16,10 +16,24 @@ async function place(_, args) {
   }
 }
 
+async function newPlace(_, args) {
+  try {
+    const { title, address, lat, lng } = args.input;
+    const newPlace = new PlaceModel({ title, address, lat, lng });
+
+    return await newPlace.save();
+  } catch (error) {
+    return error;
+  }
+}
+
 const resolvers = {
   Query: {
     places,
     place,
+  },
+  Mutation: {
+    newPlace,
   },
 };
 
